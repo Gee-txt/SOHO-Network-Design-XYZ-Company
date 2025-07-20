@@ -22,19 +22,12 @@ XYZ is expanding into a new branch near Bonalbo village in Eastern Australia. Th
 
 ## 📡 Network Diagram
 
-![SOHO Network Diagram](network-diagram/soho-network-diagram.png)
+![SOHO Network Diagram](Structure.png)
 
 ## 📋 VLAN and IP Plan
 
 Check out:
-- [VLAN Plan](vlan-plan.md)
-- [Addressing Plan](addressing-plan.md)
-
-## ⚙️ Configurations
-
-- [Router Config](configs/router-config.txt)
-- [Switch Config](configs/switch-config.txt)
-- [DHCP Setup](dhcp-setup.md)
+- [IP Addressing and VLAN Plan](IP-Addressing-and-VLAN-Plan.md)
 
 ---
 
