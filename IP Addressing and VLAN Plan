@@ -1,0 +1,31 @@
+# 📋 IP Addressing and VLAN Plan
+
+This plan outlines the VLAN segmentation and IP addressing for the XYZ Company SOHO Branch network.
+
+| Department                    | VLAN ID | VLAN Name         | Subnet             | Gateway IP       | IP Range                      | Devices          |
+|-------------------------------|---------|-------------------|--------------------|------------------|-------------------------------|------------------|
+| Admin / IT                    | 10      | VLAN_ADMIN        | 192.168.1.0/26     | 192.168.1.1      | 192.168.1.2 – 192.168.1.62    | PCs, WAP         |
+| Finance / HR                  | 20      | VLAN_FINANCE_HR   | 192.168.1.64/26    | 192.168.1.65     | 192.168.1.66 – 192.168.1.126  | PCs, WAP         |
+| Customer Service / Reception  | 30      | VLAN_CS_RECEPTION | 192.168.1.128/26   | 192.168.1.129    | 192.168.1.130 – 192.168.1.190 | PCs, WAP         |
+| Reserved for future use       | -       | VLAN_RESERVED     | 192.168.1.192/26   | 192.168.1.193    | 192.168.1.194 – 192.168.1.254 | -                |
+
+---
+
+## 🛜 Wireless Access Points
+
+Each VLAN includes a Wireless Access Point (WAP) for wireless connectivity.  
+Each WAP will:
+- Be assigned a static IP within its VLAN subnet (e.g., `.2`)
+- Relay DHCP from the router to wireless devices.
+
+---
+
+## 💡 DHCP Pools (Router Configuration)
+
+| VLAN Name           | DHCP Pool Name   | Network           | Subnet Mask       | Default Gateway     |
+|---------------------|------------------|-------------------|-------------------|---------------------|
+| VLAN_ADMIN          | Admin            | 192.168.1.0       | 255.255.255.192   | 192.168.1.1         |
+| VLAN_FINANCE_HR     | FinanceHR        | 192.168.1.64      | 255.255.255.192   | 192.168.1.65        |
+| VLAN_CS_RECEPTION   | CustomerService  | 192.168.1.128     | 255.255.255.192   | 192.168.1.129       |
+
+> 💬 DHCP is configured on the router with separate pools for each VLAN.
